@@ -27,7 +27,7 @@ public class OrderMapperTest {
 
     @Test
     public void orderToOrderDto() {
-        OrderDto orderDto = orderMapper.orderToOrderDto(ORDER);
+        OrderDto orderDto = orderMapper.toOrderDto(ORDER);
         Assertions.assertEquals(ORDER_DTO, orderDto);
     }
 
@@ -36,7 +36,7 @@ public class OrderMapperTest {
         Order expectedOrder = ORDER;
         expectedOrder.setId(null);
 
-        Order order = orderMapper.orderDtoToOrder(ORDER_DTO);
+        Order order = orderMapper.toOrder(ORDER_DTO);
         Assertions.assertEquals(expectedOrder, order);
     }
 }

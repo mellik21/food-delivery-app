@@ -1,3 +1,4 @@
+/*
 package com.github.mellik21.config;
 
 import org.springframework.context.annotation.Bean;
@@ -25,3 +26,4 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         return authorities -> authorities;
     }
 }
+*/

@@ -1,9 +1,11 @@
 package com.github.mellik21.model;
 
 import com.github.foodapp.api.dto.CuisineType;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Builder
 @Entity
@@ -18,6 +20,9 @@ public class Order {
     @SequenceGenerator(name = "order_generator", sequenceName = "\"order_id_seq\"")
     private Long id;
 
+    @Column(name = "delivery_order_id")
+    private Long deliveryOrderId;
+
     @Column(name = "restaurant_id")
     private Long restaurantId;
 
@@ -30,5 +35,18 @@ public class Order {
 
     @Column
     private String comment;
+
+/*    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "client_id")
+    private Client client;*/
+
+    @Column
+    private String courierName;
+
+    @Column
+    private LocalDateTime expectedDeliveryTime;
+
+    @Column
+    private LocalDateTime createdWhen;
 
 }

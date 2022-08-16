@@ -26,27 +26,27 @@ public class OrderController implements OrderApi {
     @Override
     public List<OrderDto> getOrdersList() {
         return orderService.getOrdersList().stream()
-                .map(orderMapper::orderToOrderDto)
+                .map(orderMapper::toOrderDto)
                 .collect(Collectors.toList());
     }
 
     @Override
     public OrderDto getOrder(String orderId) {
-        return orderMapper.orderToOrderDto(orderService.getOrder(Long.parseLong(orderId)));
+        return orderMapper.toOrderDto(orderService.getOrder(Long.parseLong(orderId)));
     }
 
     @Override
     public void createOrder(OrderDto orderDto) {
-        orderService.createOrder(orderMapper.orderDtoToOrder(orderDto));
+        orderService.createOrder(orderMapper.toOrder(orderDto));
     }
 
     @Override
     public void updateOrder(OrderDto orderDto) {
-        orderService.updateOrder(orderMapper.orderDtoToOrder(orderDto));
+        orderService.updateOrder(orderMapper.toOrder(orderDto));
     }
 
     @Override
     public void deleteOrder(OrderDto orderDto) {
-        orderService.deleteOrder(orderMapper.orderDtoToOrder(orderDto));
+        orderService.deleteOrder(orderMapper.toOrder(orderDto));
     }
 }

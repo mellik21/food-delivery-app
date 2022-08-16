@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public interface OrderMapper {
 
-    OrderDto orderToOrderDto(Order order);
+    OrderDto toOrderDto(Order order);
 
-    Order orderDtoToOrder(OrderDto orderDto);
+    Order toOrder(OrderDto orderDto);
 }

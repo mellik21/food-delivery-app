@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @Builder
 @RequiredArgsConstructor
@@ -20,4 +22,8 @@ public class OrderDto {
     String address;
     @ApiModelProperty(notes = "Комментарий", example = "можна пабыстрее??")
     String comment;
+
+    @ApiModelProperty(notes = "Время заказа", example = "2017-01-13T17:09:42.411")
+    LocalDateTime creationDate;
+
 }

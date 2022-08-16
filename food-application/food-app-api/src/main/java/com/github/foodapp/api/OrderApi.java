@@ -28,12 +28,11 @@ public interface OrderApi {
             paramType = "body",
             value = "информация о заказе?"
     )
-
     @PostMapping("/create")
     void createOrder(@RequestBody OrderDto orderDto);
 
     @ApiOperation(value = "Обновление заказа")
-    @ApiImplicitParam(name = "employeeDto", value = "Dto сотрудника", required = true, dataType = "com.epam.employees_api.dto.EmployeeDto", paramType = "requestParam")
+    @ApiImplicitParam(name = "employeeDto", value = "Dto сотрудника", required = true, paramType = "requestParam")
     @PutMapping("/update")
     void updateOrder(@RequestBody OrderDto orderDto);
 

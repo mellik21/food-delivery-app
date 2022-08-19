@@ -1,0 +1,107 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: mellik21
+      changes:
+        - createTable:
+            tableName: client
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: email
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 2
+      author: mellik21
+      changes:
+        - createTable:
+            tableName: order
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: delivery_order_id
+                  type: int
+                  constraints:
+                    nullable: true
+              - column:
+                  name: client_id
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_client_id
+                    references: client(id)
+              - column:
+                  name: restaurant_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: cuisine_type
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: address
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: comment
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: courier_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: expected_delivery_time
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_when
+                  type: timestamp
+                  constraints:
+                    nullable: true
+
+
+
+
+  - changeSet:
+      id: 3
+      author: mellk21
+      changes:
+        - insert:
+            tableName: client
+            columns:
+              - column:
+                  name: id
+                  value: "1"
+              - column:
+                  name: name
+                  value: "Fedor"
+              - column:
+                  name: email
+                  value: "email"

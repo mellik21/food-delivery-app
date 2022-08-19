@@ -3,13 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>food-application</artifactId>
+        <artifactId>food-delivery-application</artifactId>
         <groupId>com.github.mellik21</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>food-app</artifactId>
+    <artifactId>food-delivery-app</artifactId>
 
     <properties>
         <hibernate.version>5.6.1.Final</hibernate.version>
@@ -64,8 +64,13 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.github.mellik21</groupId>
-            <artifactId>food-app-api</artifactId>
+            <artifactId>food-delivery-app-api</artifactId>
             <version>1.0.1</version>
         </dependency>
 
@@ -92,15 +97,10 @@
             <version>${liquibase.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.kafka</groupId>
-            <artifactId>spring-kafka</artifactId>
-        </dependency>
-
-        <!-- <dependency>
-             <groupId>org.springframework.boot</groupId>
-             <artifactId>spring-boot-starter-oauth2-client</artifactId>
-         </dependency>-->
+       <!-- <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-client</artifactId>
+        </dependency>-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
